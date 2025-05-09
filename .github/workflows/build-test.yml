@@ -33,7 +33,7 @@ jobs:
 
     # Restore NuGet packages
     - name: Restore NuGet packages
-      run: nuget restore Projeto-DotNet.sln
+      run: nuget restore ProjetoDotNetTeste.csproj
 
     # Cache SonarQube Cloud packages
     - name: Cache SonarQube Cloud packages
