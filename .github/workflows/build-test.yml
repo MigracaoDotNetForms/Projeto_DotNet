@@ -1,19 +1,16 @@
-name: Build and Analyze Windows Forms App
+name: Build 
 
 on:
   push:
     branches:
       - main
-      - feature/SonarCloud
-  pull_request:
-     types: [opened, synchronize, reopened]
-  
+  workflow_dispatch:
+ 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    # Checkout the code from the repository
     - name: Checkout code
       uses: actions/checkout@v4
       with:
@@ -36,7 +33,7 @@ jobs:
 
     # Restore NuGet packages
     - name: Restore NuGet packages
-      run: nuget restore Projeto-DotNetAppForms.sln
+      run: nuget restore Projeto-DotNet.sln
 
     # Cache SonarQube Cloud packages
     - name: Cache SonarQube Cloud packages
